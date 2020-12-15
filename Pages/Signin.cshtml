@@ -1,0 +1,70 @@
+﻿@page
+@model SigninModel
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Авторизация</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/blog/">
+    <link rel="stylesheet" href="C:\Users\Danila\Desktop\ProjectB\assets\css\blog.css">
+
+<link href="dist/css/bootstrap.min.css" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+    <link href="css/blog.css" rel="stylesheet">
+  </head>
+ <body>
+
+  
+<div class="nav-scroller py-1 mb-2">
+    <nav class="nav d-flex justify-content-endntent-between">
+        <a class="p-2 text-muted beautifront" asp-area="" asp-page="/Covid">Коронавирус</a>
+        <a class="p-2 text-muted beautifront" asp-area="" asp-page="/Offices">Офисы</a>
+        <a class="p-2 text-muted beautifront" asp-area="" asp-page="/Blog">Блог</a>
+        <a class="p-2 text-muted beautifront" asp-area="" asp-page="/Videos">Видео</a>
+        <a class="p-2 text-muted beautifront" asp-area="" asp-page="/About">О Нас</a>
+    </nav>  
+</div>
+
+
+
+<div class="form_auth_block">
+  <div class="form_auth_block_content">
+    <p class="form_auth_block_head_text" style="background-color: #fee97c">Авторизация</p>
+    <form class="form_auth_style" action="#" method="post">
+      <input type="email" name="auth_email" placeholder="Введите Ваш имейл" required >  
+      <input type="password" name="auth_pass" placeholder="Введите пароль" required >
+      <button class="form_auth_button" type="submit" name="form_auth_submit" style="background-color: #fee97c"><a asp-area="" asp-page="/Person">Войти</a></button>
+      <button class="form_auth_button" type="submit" name="form_auth_submit" style="background-color: #fee97c; width: 150px "><a asp-area="" asp-page="/Signup">Нет аккаунта</a></button>
+    </form>
+  </div>
+</div>
+
+ 
+<script type="text/javascript">
+  $(document).ready(function(){
+ 
+  $(window).scroll(function(){
+     if ($(this).scrollTop() > 10) { 
+     $('.scrollup').fadeIn();
+  } else {
+     $('.scrollup').fadeOut();
+  }
+});
+ 
+  $('.scrollup').click(function(){
+  $("html, body").animate({ scrollTop: 0 }, 600);
+  return false;
+ });
+ 
+});
+</script>
+
+<a href="#" class="scrollup">Наверх</a>
+</body>
+
+
+</html>
+

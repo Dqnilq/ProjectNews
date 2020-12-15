@@ -1,0 +1,121 @@
+﻿@page
+@model BlogModel
+
+@{
+    ViewData["Title"] = "Блог";
+}
+
+<!doctype html>
+<html lang="en">
+  <head>
+     <meta charset="utf-8">
+ 	<meta name="viewport" content="width=device-width, initial-scale=1">
+ 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+ 	<link rel="stylesheet" href="css/reset.css"> 
+ 	<link rel="stylesheet" href="css/style.css"> 
+ 	<script src="js/modernizr.js"></script> 
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+     <title>Блоги</title>
+     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/blog/">
+ 
+ <link href="dist/css/bootstrap.min.css" rel="stylesheet">    
+ 	 <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=e1ceff9b-7037-446a-907b-622ee6191e19" type="text/javascript"></script>
+     <script src="mapbasics.js" type="text/javascript"></script>
+     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+     <link href="css/blog.css" rel="stylesheet">
+   </head>
+<body>
+    
+
+  <div class="container">
+    <main role="main" class="pb-3">
+    </main>
+  </div>
+  
+
+<div class="nav-scroller py-1 mb-2">
+    <nav class="nav d-flex justify-content-endntent-between">
+        <a class="p-2 text-muted beautifront" asp-area="" asp-page="/Covid">Коронавирус</a>
+        <a class="p-2 text-muted beautifront" asp-area="" asp-page="/Offices">Офисы</a>
+        <a class="p-2 text-muted beautifront" asp-area="" asp-page="/Blog">Блог</a>
+        <a class="p-2 text-muted beautifront" asp-area="" asp-page="/Videos">Видео</a>
+        <a class="p-2 text-muted beautifront" asp-area="" asp-page="/About">О Нас</a>
+    </nav>  
+</div>
+
+
+
+<div id="secwrapper">
+      <section>
+        <article>
+          <a href="#"><img src="image\xboxlast.jpg" width="265px" height="200px" alt="Фото не загрузилось!"/></a>
+          <h1>Статья 1</h1>
+          <p>Текст статьи 1</p>
+          <a href="#" class="readmore">Читать далее..</a>
+        </article>
+        <article>
+          <a href="#"><img src="image\xboxlast.jpg" width="265px" height="200px" ></a>
+         <h1>Статья 1</h1>
+          <p>Текст статьи 1</p>
+          <a href="#" class="readmore">Читать далее..</a>
+        </article>
+        <article class="rightcl">
+          <a href="#"><img src="image\xboxlast.jpg" width="265px" height="200px" alt="Фото не загрузилось!"/></a>
+         <h1>Статья 1</h1>
+          <p>Текст статьи 1</p>
+          <a href="#" class="readmore">Читать далее..</a>
+        </article>      
+        <article>
+          <a href="#"><img src="image\xboxlast.jpg"  width="265px" height="200px"alt="Фото не загрузилось!"/></a>
+        <h1>Статья 1</h1>
+          <p>Текст статьи 1</p>
+          <a href="#" class="readmore">Читать далее..</a>
+        </article>
+       <article>
+          <a href="#"><img src="image\xboxlast.jpg"  width="265px" height="200px"alt="Фото не загрузилось!"/></a>
+        <h1>Статья 1</h1>
+          <p>Текст статьи 1</p>
+          <a href="#" class="readmore">Читать далее..</a>
+        </article>
+        <article>
+          <a href="#"><img src="image\xboxlast.jpg"  width="265px" height="200px"alt="Фото не загрузилось!"/></a>
+        <h1>Статья 1</h1>
+          <p>Текст статьи 1</p>
+          <a href="#" class="readmore">Читать далее..</a>
+        </article>
+        <article>
+          <a href="#"><img src="image\xboxlast.jpg"  width="265px" height="200px"alt="Фото не загрузилось!"/></a>
+        <h1>Статья 1</h1>
+          <p>Текст статьи 1</p>
+          <a href="#" class="readmore">Читать далее..</a>
+        </article>
+      </section>
+    </div>
+
+
+<script type="text/javascript">
+  $(document).ready(function(){
+ 
+  $(window).scroll(function(){
+     if ($(this).scrollTop() > 10) { 
+     $('.scrollup').fadeIn();
+  } else {
+     $('.scrollup').fadeOut();
+  }
+});
+ 
+  $('.scrollup').click(function(){
+  $("html, body").animate({ scrollTop: 0 }, 600);
+  return false;
+ });
+ 
+});
+</script>
+
+<a href="#" class="scrollup">Наверх</a>
+
+
+</body>
+</html>
+

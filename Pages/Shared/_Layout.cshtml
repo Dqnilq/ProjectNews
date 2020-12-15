@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/blog.css" />
+</head>`
+<body>
+<div class="container">
+  <header class="blog-header py-3">
+    <div class="row flex-nowrap justify-content-between align-items-center">
+      <div class="col-4 text-center">
+        <a class="blog-header-logo text-dark" asp-area="" asp-page="/Index">Watch Me!</a>
+      </div>
+      <div>
+        <a class="btn btn-sm btn-outline-secondary" asp-area="" asp-page="/Signup" ><strong class="beautifront">Регистрация</strong></a>
+        <a class="btn btn-sm btn-outline-secondary" asp-area="" asp-page="/Signin"><strong class="beautifront">Войти</strong></a>
+      </div>
+    </div>
+  
+  </header>
+</div>
+<div class="container">
+  <main role="main" class="pb-3">
+    @RenderBody()
+  </main>
+</div>
+
+
+
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/slider.js" asp-append-version="true"></script>
+
+@RenderSection("Scripts", required: false)
+</body>
+<footer class="blog-footer bobamoba1">
+  <p> Watch me! 2020. Все права защищены законом. <a>Макаров Д.В</a></p>
+</footer>
+</html>

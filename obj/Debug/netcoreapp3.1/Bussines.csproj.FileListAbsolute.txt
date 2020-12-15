@@ -41,3 +41,5 @@ C:\Users\Danila\Desktop\HomeWorkIT\Bussines\Bussines\obj\Debug\netcoreapp3.1\Raz
 C:\Users\Danila\Desktop\HomeWorkIT\Bussines\Bussines\obj\Debug\netcoreapp3.1\Razor\Pages\Signin.cshtml.g.cs
 C:\Users\Danila\Desktop\HomeWorkIT\Bussines\Bussines\obj\Debug\netcoreapp3.1\Razor\Pages\Signup.cshtml.g.cs
 C:\Users\Danila\Desktop\HomeWorkIT\Bussines\Bussines\obj\Debug\netcoreapp3.1\Razor\Pages\Person.cshtml.g.cs
+C:\Users\Danila\Desktop\HomeWorkIT\Bussines\Bussines\bin\Debug\netcoreapp3.1\Npgsql.dll
+C:\Users\Danila\Desktop\HomeWorkIT\Bussines\Bussines\obj\Debug\netcoreapp3.1\Razor\Pages\BlogContent.cshtml.g.cs

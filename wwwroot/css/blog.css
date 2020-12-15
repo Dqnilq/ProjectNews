@@ -2218,6 +2218,9 @@ body {
   margin-bottom: 8px;
 
 }
+a, h1, p {
+    color: red !important;
+}
 #dots li {
   display:inline-block;
   border-radius:10px;
@@ -2231,3 +2234,5 @@ body {
 #dots li.active {
   background:#2284A1;
 }
+
+

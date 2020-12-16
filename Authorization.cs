@@ -63,13 +63,13 @@ namespace Bussines
             MakeResponse(context, user);
         }
     
-        private static bool Validate(string name, string passworsd)
+        private static bool Validate(string name, string password)
         {
             var regexName = new Regex("^[a-zA-Zа-яёА-ЯЁ]{3,20}$");
             var checkName = regexName.IsMatch(name);
             
             var regexPassword = new Regex(@"^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}$");
-            var checkPassword = regexPassword.IsMatch(passworsd);
+            var checkPassword = regexPassword.IsMatch(password);
 
             return checkName && checkPassword;
         }

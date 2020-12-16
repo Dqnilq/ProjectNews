@@ -54,7 +54,6 @@ namespace Bussines
             app.UseAuthorization();
 
             app.Map("/authorization", Authorization.Start);
-            app.Map("/exit", Authorization.Exit);
 
             app.UseEndpoints(endpoints => { endpoints.MapRazorPages(); });
         }

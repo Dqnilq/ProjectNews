@@ -51,3 +51,4 @@
     //initialize slider on load
     moveTo('next');
 });
+

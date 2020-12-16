@@ -79,7 +79,7 @@ function signup() {
             if (result === "ok")
                 document.location.href = "Account"
             else if (result === "error")
-                alert("Произошла ошибка при регистрации. Провертье введенные данные")
+                alert("Произошла ошибка при регистрации. Проверьте введенные данные")
             else
                 alert("Этот логин уже занят")
         }

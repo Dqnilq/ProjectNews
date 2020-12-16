@@ -38,6 +38,8 @@ function signup() {
     let name = form.name.value;
     let password1 = form.password1.value;
     let password2 = form.password2.value;
+    let realname = form.realname.value;
+    let phone = form.phone.value;
 
     let checkName = /^[a-zA-Zа-яёА-ЯЁ]{3,20}$/.test(name);
     let checkPassword = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}$/.test(password1);

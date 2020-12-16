@@ -39,6 +39,10 @@
         <input name="password1" type="password" id="inputPassword1" class="form-control middle-input" placeholder="Пароль" required="">
         <label for="inputPassword2" class="sr-only">Повторите пароль</label>
         <input name="password2" type="password" id="inputPassword2" class="form-control" placeholder="Повторите пароль" required="">
+         <label for="inputName" class="sr-only">Настоящее имя</label>
+         <input name="realname" type="text" id="inputName" class="form-control" placeholder="Настоящее_имя" required="" autofocus="">
+         <label for="inputPhone" class="sr-only">Номер телефона</label>
+         <input name="phone" type="text" id="inputPhone" class="form-control" placeholder="Номер телефона" required="" autofocus="">
         <div class="signup-link"><a href="@Url.Page("./SignIn")">Войти</a></div>
         <button name="remember" class="form_auth_button" type="submit" onclick="signup()">Зарегестрироваться</button>
     </form>

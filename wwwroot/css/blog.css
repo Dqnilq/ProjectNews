@@ -653,15 +653,6 @@ body {
     color: black
 }
 
-.bobamoba1{
-    border-radius:  20px 0 0 20px  !important;
-    position:fixed;
-    left:0px;
-    bottom:0px;
-    height:30px;
-    width:100%;
-    }
-
 
 .imgset { 
 display: flex;
@@ -2168,7 +2159,7 @@ body {
     }
 
     .bobamoba1{
-      border-radius: 20px 20px 0 0 !important; 
+      border-radius: 20px 20px 0 0 !important;
     }
 
     .beautifront{
@@ -2218,9 +2209,7 @@ body {
   margin-bottom: 8px;
 
 }
-a, h1, p {
-    color: red !important;
-}
+
 #dots li {
   display:inline-block;
   border-radius:10px;

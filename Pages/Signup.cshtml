@@ -30,20 +30,33 @@
 </div>
 
 
-
-
-<div class="form_auth_block">
-  <div class="form_auth_block_content">
-    <p class="form_auth_block_head_text" style="background-color: #fee97c">Регистрация</p>
-    <form class="form_auth_style" action="#" method="post">
-      <input type="email" name="auth_email" placeholder="Введите Ваш имейл" required >
-      <input type="password" name="auth_pass" placeholder="Введите пароль" required >
-      <input type="password" name="auth_pass" placeholder="Подтвердите пароль" required >
-      <button class="form_auth_button" type="submit" name="form_auth_submit" style="background-color: #fee97c">Войти</button>
-      <button class="form_auth_button" type="submit" name="form_auth_submit" style="background-color: #fee97c; width: 150px "><a asp-area="" asp-page="/Signin">Есть аккаунт</a></button>
+<div class="center-block">
+    <form class="signin-form simple-border" name="signUp" onsubmit="return false;">
+        <h2>Регистрация</h2>
+        <label for="inputLogin" class="sr-only">Логин</label>
+        <input name="name" type="text" id="inputLogin" class="form-control" placeholder="Логин" required="" autofocus="">
+        <label for="inputPassword1" class="sr-only">Пароль</label>
+        <input name="password1" type="password" id="inputPassword1" class="form-control middle-input" placeholder="Пароль" required="">
+        <label for="inputPassword2" class="sr-only">Повторите пароль</label>
+        <input name="password2" type="password" id="inputPassword2" class="form-control" placeholder="Повторите пароль" required="">
+        <div class="signup-link"><a href="@Url.Page("./SignIn")">Войти</a></div>
+        <button name="remember" class="btn btn-lg btn-primary btn-block" type="submit" onclick="signup()">Зарегестрироваться</button>
     </form>
-  </div>
 </div>
+
+@* *@
+@*  <div class="form_auth_block"> *@
+@*   <div class="form_auth_block_content"> *@
+@*     <p class="form_auth_block_head_text" style="background-color: #fee97c">Регистрация</p> *@
+@*     <form class="form_auth_style" action="#" method="post"> *@
+@*       <input type="email" name="auth_email" placeholder="Введите Ваш имейл" required > *@
+@*       <input type="password" name="auth_pass" placeholder="Введите пароль" required > *@
+@*       <input type="password" name="auth_pass" placeholder="Подтвердите пароль" required > *@
+@*       <button class="form_auth_button" type="submit" name="form_auth_submit" style="background-color: #fee97c" onclick="signin()">Зарегестрироваться</button> *@
+@*       <button class="form_auth_button" type="submit" name="form_auth_submit" style="background-color: #fee97c; width: 150px "><a asp-area="" asp-page="/Signin">Есть аккаунт</a></button> *@
+@*     </form> *@
+@*   </div> *@
+@* </div> *@
 
  
 <script type="text/javascript">

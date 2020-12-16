@@ -11,11 +11,12 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/blog/">
   
-    <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet"> 
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet"> 
   
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
   
-    <link href="assets/css/blog.css" rel="stylesheet">
+    <link href="css/blog.css" rel="stylesheet">
+    <link href="css/another.css" rel="stylesheet">
 </head>
 <body>
     
@@ -35,20 +36,30 @@
         <a class="p-2 text-muted beautifront" asp-area="" asp-page="/About">О Нас</a>
     </nav>  
 </div>
+@* *@
+@* <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark mobaboba"> *@
+@*     <div class="col-md-6 px-0" style="float: left"> *@
+@*         <h1 class="display-4 font-italic textheader-dark beautifront">Имя </h1> *@
+@*         <p class="lead my-3 textheader-dark">Кол-во статей: N</p> *@
+@*         <p class="lead mb-0"><a href="#" class="text-white font-weight-bold textheader-dark beautifront" ></a></p> *@
+@*     </div> *@
+@*        <div class="container1"> *@
+@*            <ul id="slider11"> *@
+@*                <li><img src="image\person1.jpg" alt="" /></li> *@
+@*            </ul> *@
+@*        </div> *@
+@* </div> *@
 
-<div class="jumbotron p-4 p-md-5 text-white rounded bg-dark mobaboba">
-    <div class="col-md-6 px-0" style="float: left">
-        <h1 class="display-4 font-italic textheader-dark beautifront">Имя </h1>
-        <p class="lead my-3 textheader-dark">Кол-во статей: N</p>
-        <p class="lead mb-0"><a href="#" class="text-white font-weight-bold textheader-dark beautifront" ></a></p>
+<div class="container">
+    <div class="account-header">
+        <h1 class="account-username">@Model.Users.Name</h1>
+        <a href="#" onclick="exit()">Выйти</a>
     </div>
-       <div class="container1">
-           <ul id="slider11">
-               <li><img src="image\person1.jpg" alt="" /></li>
-           </ul>
-       </div>
+    <div class="account-courses">
+        <h2>Мои посты: (@Model.Users.post_count):</h2>
+        
+    </div>
 </div>
-
 
 <script type="text/javascript">
   $(document).ready(function(){

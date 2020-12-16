@@ -1,5 +1,5 @@
 ﻿@page
-@model SigninModel
+@model SignInModel
 
 <!doctype html>
 <html lang="en">
@@ -30,17 +30,33 @@
 
 
 
-<div class="form_auth_block">
-  <div class="form_auth_block_content">
-    <p class="form_auth_block_head_text" style="background-color: #fee97c">Авторизация</p>
-    <form class="form_auth_style" action="#" method="post">
-      <input type="email" name="auth_email" placeholder="Введите Ваш имейл" required >  
-      <input type="password" name="auth_pass" placeholder="Введите пароль" required >
-      <button class="form_auth_button" type="submit" name="form_auth_submit" style="background-color: #fee97c"><a asp-area="" asp-page="/Person">Войти</a></button>
-      <button class="form_auth_button" type="submit" name="form_auth_submit" style="background-color: #fee97c; width: 150px "><a asp-area="" asp-page="/Signup">Нет аккаунта</a></button>
+ 
+<div class="center-block">
+    <form class="signin-form simple-border" name="signIn" onsubmit="return false;">
+        <h2>Вход</h2>
+        <label for="inputLogin" class="sr-only">Логин</label>
+        <input name="name" type="text" id="inputLogin" class="form-control" placeholder="Логин" required="" autofocus="">
+        <label for="inputPassword" class="sr-only">Пароль</label>
+        <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Пароль" required="">
+        <div class="checkbox">
+            <label class="remember-label"><input type="checkbox" value="remember-me"> Запомнить меня</label>
+        </div>
+        <div class="signup-link"><a href="@Url.Page("./SignUp")">Зарегестрироваться</a></div>
+        <button name="remember" class="btn btn-lg btn-primary btn-block" type="submit" onclick="signin()">Войти</button>
     </form>
-  </div>
 </div>
+
+@*  <div class="form_auth_block"> *@
+@*   <div class="form_auth_block_content"> *@
+@*     <p class="form_auth_block_head_text" style="background-color: #fee97c">Авторизация</p> *@
+@*     <form class="form_auth_style" action="#" method="post"> *@
+@*       <input type="email" name="auth_email" placeholder="Введите Ваш имейл" required > *@
+@*       <input type="password" name="auth_pass" placeholder="Введите пароль" required > *@
+@*       <button class="form_auth_button" type="submit" name="form_auth_submit" style="background-color: #fee97c" onclick="signin()" >Войти</button> *@
+@*       <button class="form_auth_button" type="submit" name="form_auth_submit" style="background-color: #fee97c; width: 150px "><a asp-area="" asp-page="/Signup">Нет аккаунта</a></button> *@
+@*     </form> *@
+@*   </div> *@
+@* </div> *@
 
  
 <script type="text/javascript">

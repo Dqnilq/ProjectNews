@@ -59,3 +59,15 @@
     padding-bottom: .25rem;
     border-bottom: 1px solid rgba(34, 36, 38, .15);
 }
+
+.account-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+}
+
+.account-username {
+    font-weight: 400;
+}

@@ -8,7 +8,7 @@ using Microsoft.Extensions.Logging;
 
 namespace Bussines.Pages
 {
-    public class PersonModel : PageModel
+    public class PersonModel : SecurePageModel
     {
         private readonly ILogger<PersonModel> _logger;
 

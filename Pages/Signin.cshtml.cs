@@ -8,11 +8,11 @@ using Microsoft.Extensions.Logging;
 
 namespace Bussines.Pages
 {
-    public class SigninModel : PageModel
+    public class SignInModel : PageModel
     {
-        private readonly ILogger<SigninModel> _logger;
+        private readonly ILogger<SignInModel> _logger;
 
-        public SigninModel(ILogger<SigninModel> logger)
+        public SignInModel(ILogger<SignInModel> logger)
         {
             _logger = logger;
         }

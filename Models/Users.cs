@@ -14,16 +14,17 @@ namespace Bussines.Models
         
         public DateTime registration_date  { get; set; }
         
-        public int post_count { get; set; }
 
-        public Users(string name, string password, DateTime registrationDate)
+        public Users(string name, string password, DateTime registrationDate , string user_name, string phone_num)
         {
             Name = name;
             Password = password;
             registration_date = registrationDate;
+            user_name = this.user_name;
+            phone_num = this.phone_num;
         }
         
-        public Users(int id, string name, string password, DateTime registrationDate, string user_name, string phone_num, int post_count)
+        public Users(int id, string name, string password, DateTime registrationDate, string user_name, string phone_num)
         {
             Id = id;
             Name = name;
@@ -31,7 +32,6 @@ namespace Bussines.Models
             registration_date = registrationDate;
             user_name = this.user_name;
             phone_num = this.phone_num;
-            post_count = this.post_count;
         }
     }
 }

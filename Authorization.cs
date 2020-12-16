@@ -32,7 +32,6 @@ namespace Bussines
                 {
                     context.Response.Headers.Add("result", "ok");
                     context.Session.Remove("users_id");
-                    context.Session.Remove("users_name");
                 }
                 else
                 {
@@ -53,13 +52,15 @@ namespace Bussines
         {
             var name = context.Request.Headers["name"];
             var password = context.Request.Headers["password"];
+            var user_name = context.Request.Headers["user_name"];
+            var phone_num = context.Request.Headers["phone_num"];
             var valid = Validate(name, password);
             if (!valid)
             {
                 MakeErrorResponse(context);
                 return;
             }
-            var user = new UsersDao().TrySignup(name, password);
+            var user = new UsersDao().TrySignup(name, password, user_name, phone_num);
             MakeResponse(context, user);
         }
     
@@ -83,6 +84,7 @@ namespace Bussines
                 context.Session.SetString("users_name", user.Name);
             }
             else
+            
             {
                 context.Response.Headers.Add("result", "failed");
             }

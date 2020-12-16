@@ -17,73 +17,62 @@ namespace Bussines.Models
 
         public Users GetById(int id)
         {
-            using (NpgsqlConnection connection = new NpgsqlConnection(ConnectionString.Get()))
+            using NpgsqlConnection connection = new NpgsqlConnection(ConnectionString.Get());
+            connection.Open();
+            var command = new NpgsqlCommand(this.SelectById(id), connection);
+            var reader = command.ExecuteReader();
+            if (reader.HasRows)
             {
-                connection.Open();
-                var command = new NpgsqlCommand(this.SelectById(id), connection);
-                var reader = command.ExecuteReader();
-                if (reader.HasRows)
-                {
-                    reader.Read();
-                    var user = GetUser(reader);
-                    return user;
-                }
-                else { return null; }
+                reader.Read();
+                var user = GetUser(reader);
+                return user;
             }
+            else { return null; }
         }
 
         public List<Users> GetAll()
         {
             var allUsers = new List<Users>();
-            using (NpgsqlConnection connection = new NpgsqlConnection(ConnectionString.Get()))
+            using NpgsqlConnection connection = new NpgsqlConnection(ConnectionString.Get());
+            connection.Open();
+            var command = new NpgsqlCommand(this.SelectAll(), connection);
+            var reader = command.ExecuteReader();
+            if (!reader.HasRows) return allUsers;
+            foreach (DbDataRecord record in reader)
             {
-                connection.Open();
-                var command = new NpgsqlCommand(this.SelectAll(), connection);
-                var reader = command.ExecuteReader();
-                if (reader.HasRows)
-                {
-                    foreach (DbDataRecord record in reader)
-                    {
-                        var user = GetUser(record);
-                        allUsers.Add(user);
-                    }
-                }
+                var user = GetUser(record);
+                allUsers.Add(user);
             }
+
             return allUsers;
         }
 
         public void Save(Users user)
         {
-            using (NpgsqlConnection connection = new NpgsqlConnection(ConnectionString.Get()))
-            {
-                connection.Open();
-                var command = new NpgsqlCommand(
-                    this.Insert(
-                        new[] {"name", "password", "registration_date"},
-                        new object[] {user.Name, user.Password, user.registration_date.ToString("d")}),
-                    connection);
-                command.ExecuteNonQuery();
-            }
+            using NpgsqlConnection connection = new NpgsqlConnection(ConnectionString.Get());
+            connection.Open();
+            var command = new NpgsqlCommand(
+                this.Insert(
+                    new[] {"name", "password", "user_name", "phone_num", "registration_date"},
+                    new object[] {user.Name, user.Password, user.user_name, user.phone_num, user.registration_date.ToString("d")}),
+                connection);
+            command.ExecuteNonQuery();
         }
 
         public void Delete(Users user)
         {
-            using (NpgsqlConnection connection = new NpgsqlConnection(ConnectionString.Get()))
-            {
-                connection.Open();
-                var command = new NpgsqlCommand(this.Delete(user.Id), connection);
-                command.ExecuteNonQuery();
-            }
+            using NpgsqlConnection connection = new NpgsqlConnection(ConnectionString.Get());
+            connection.Open();
+            var command = new NpgsqlCommand(this.Delete(user.Id), connection);
+            command.ExecuteNonQuery();
         }
 
         public void DeleteById(int id)
         {
-            using (NpgsqlConnection connection = new NpgsqlConnection(ConnectionString.Get()))
-            {
-                connection.Open();
-                var command = new NpgsqlCommand(this.Delete(id), connection);
-                command.ExecuteNonQuery();
-            }
+            using NpgsqlConnection connection = new NpgsqlConnection(ConnectionString.Get());
+            connection.Open();
+            var command = new NpgsqlCommand(this.Delete(id), connection);
+            command.ExecuteNonQuery();
         }
 
         // public List<Course> GetCourses(int userId)
@@ -147,34 +136,30 @@ namespace Bussines.Models
             return user.Password == password ? user : null;
         }
 
-        public Users TrySignup(string name, string password)
+        public Users TrySignup(string name, string password, string user_name, string phone_num)
         {
             var user = GetByName(name);
 
             if (user != null)
                 return null;
 
-            user = new Users(name, password, DateTime.Now);
+            user = new Users(name, password, DateTime.Now, user_name, phone_num);
             Save(user);
             
             return user;
         }
 
-        public Users GetByName(string name)
+        private Users GetByName(string name)
         {
-            using (NpgsqlConnection connection = new NpgsqlConnection(ConnectionString.Get()))
-            {
-                connection.Open();
-                var command = new NpgsqlCommand(this.SelectByField("name", name), connection);
-                var reader = command.ExecuteReader();
-                if (reader.HasRows)
-                {
-                    reader.Read();
-                    var user = GetUser(reader);
-                    return user;
-                }
-                else { return null; }
-            }
+            using NpgsqlConnection connection = new NpgsqlConnection(ConnectionString.Get());
+            connection.Open();
+            var command = new NpgsqlCommand(this.SelectByField("name", name), connection);
+            var reader = command.ExecuteReader();
+            if (!reader.HasRows) return null;
+            reader.Read();
+            var user = GetUser(reader);
+            return user;
+
         }
 
         private static Users GetUser(IDataRecord record)
@@ -185,8 +170,7 @@ namespace Bussines.Models
                 record["password"].ToString(),
                 DateTime.Parse(record["registration_date"].ToString()),
                 record["user_name"].ToString(),
-                record["phone_num"].ToString(),
-                int.Parse(record["post_count"].ToString()));
+                record["phone_num"].ToString());
         }
     }
 }

@@ -38,6 +38,8 @@ function signup() {
     let name = form.name.value;
     let password1 = form.password1.value;
     let password2 = form.password2.value;
+    let username = form.realname.value;
+    let phonenum = form.phone.value;
 
     let checkName = /^[a-zA-Zа-яёА-ЯЁ]{3,20}$/.test(name);
     let checkPassword = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}$/.test(password1);
@@ -68,6 +70,8 @@ function signup() {
         headers: {
             'name': name,
             'password': password1,
+            'user_name' : username,
+            'phone_num' : phonenum,
             'new_user': 'true'
         },
         success: function(res, status, xhr) {

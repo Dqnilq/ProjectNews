@@ -8,9 +8,9 @@ namespace Bussines.Models
         public string Name { get; set; }
         public string Password { get; set; }
         
-        public string user_name { get; set; }
+        public string UserName { get; set; }
         
-        public string phone_num { get; set; }
+        public string PhoneNum { get; set; }
         
         public DateTime registration_date  { get; set; }
         
@@ -20,8 +20,8 @@ namespace Bussines.Models
             Name = name;
             Password = password;
             registration_date = registrationDate;
-            user_name = this.user_name;
-            phone_num = this.phone_num;
+            UserName = user_name;
+            PhoneNum = phone_num;
         }
         
         public Users(int id, string name, string password, DateTime registrationDate, string user_name, string phone_num)
@@ -30,8 +30,8 @@ namespace Bussines.Models
             Name = name;
             Password = password;
             registration_date = registrationDate;
-            user_name = this.user_name;
-            phone_num = this.phone_num;
+            UserName = user_name;
+            PhoneNum = phone_num;
         }
     }
 }

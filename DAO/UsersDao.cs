@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
 using Bussines.Dao;
-using Bussines.DAO;
+using Bussines.Models;
 using Npgsql;
 
-namespace Bussines.Models
+namespace Bussines.DAO
 {
     public  class UsersDao : IDao<Users>
     {
@@ -51,10 +51,13 @@ namespace Bussines.Models
         {
             using NpgsqlConnection connection = new NpgsqlConnection(ConnectionString.Get());
             connection.Open();
+            var s = this.Insert(
+                                        new[] {"name", "password", "user_name", "phone_num", "registration_date"},
+                                        new object[] {user.Name, user.Password, user.UserName, user.PhoneNum, user.registration_date.ToString("d")});
             var command = new NpgsqlCommand(
                 this.Insert(
                     new[] {"name", "password", "user_name", "phone_num", "registration_date"},
-                    new object[] {user.Name, user.Password, user.user_name, user.phone_num, user.registration_date.ToString("d")}),
+                    new object[] {user.Name, user.Password, user.UserName, user.PhoneNum, user.registration_date.ToString("d")}),
                 connection);
             command.ExecuteNonQuery();
         }
@@ -136,14 +139,14 @@ namespace Bussines.Models
             return user.Password == password ? user : null;
         }
 
-        public Users TrySignup(string name, string password, string user_name, string phone_num)
+        public Users TrySignup(string name, string password, string userName, string phoneNum)
         {
             var user = GetByName(name);
 
             if (user != null)
                 return null;
 
-            user = new Users(name, password, DateTime.Now, user_name, phone_num);
+            user = new Users(name, password, DateTime.Now, userName, phoneNum);
             Save(user);
             
             return user;
@@ -159,7 +162,6 @@ namespace Bussines.Models
             reader.Read();
             var user = GetUser(reader);
             return user;
-
         }
 
         private static Users GetUser(IDataRecord record)

@@ -1,4 +1,5 @@
 ﻿using System.Text.RegularExpressions;
+using Bussines.DAO;
 using Bussines.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
@@ -52,15 +53,15 @@ namespace Bussines
         {
             var name = context.Request.Headers["name"];
             var password = context.Request.Headers["password"];
-            var user_name = context.Request.Headers["user_name"];
-            var phone_num = context.Request.Headers["phone_num"];
+            var userName = context.Request.Headers["user_name"];
+            var phoneNum = context.Request.Headers["phone_num"];
             var valid = Validate(name, password);
             if (!valid)
             {
                 MakeErrorResponse(context);
                 return;
             }
-            var user = new UsersDao().TrySignup(name, password, user_name, phone_num);
+            var user = new UsersDao().TrySignup(name, password, userName, phoneNum);
             MakeResponse(context, user);
         }
     
@@ -83,8 +84,8 @@ namespace Bussines
                 context.Session.SetInt32("users_id", user.Id);
                 context.Session.SetString("users_name", user.Name);
             }
-            else
             
+            else
             {
                 context.Response.Headers.Add("result", "failed");
             }

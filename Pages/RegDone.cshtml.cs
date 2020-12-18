@@ -8,13 +8,14 @@ using Microsoft.Extensions.Logging;
 
 namespace Bussines.Pages
 {
-    public class AccountModel : SecurePageModel    
+    public class RegDoneModel : SecurePageModel
     {
-        private readonly ILogger<AccountModel> _logger;
+        private readonly ILogger<RegDoneModel> _logger;
 
-        public AccountModel(ILogger<AccountModel> logger)
+        public RegDoneModel(ILogger<RegDoneModel> logger)
         {
             _logger = logger;
         }
+
     }
 }

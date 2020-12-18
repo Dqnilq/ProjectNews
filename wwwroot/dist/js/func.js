@@ -77,7 +77,7 @@ function signup() {
         success: function(res, status, xhr) {
             let result = xhr.getResponseHeader("result")
             if (result === "ok")
-                document.location.href = "Account"
+                document.location.href = "RegDone"
             else if (result === "error")
                 alert("Произошла ошибка при регистрации. Проверьте введенные данные")
             else

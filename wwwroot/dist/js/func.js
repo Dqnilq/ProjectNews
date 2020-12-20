@@ -85,3 +85,28 @@ function signup() {
         }
     })
 }
+
+function addOffice() {
+    let form = document.addOffice;
+    let name = form.name.value;
+    let price = form.price.value;
+    let photolink = form.photolink.value;
+
+
+    $.ajax({
+        type: 'POST',
+        url: '/addoffice1', 
+        headers: {
+            'name': name,
+            'price': price,
+            'photolink' : photolink
+        },
+        success: function(res, status, xhr) {
+            let result = xhr.getResponseHeader("result")
+            if (result === "ok")
+                document.location.href = "Offices"
+            else if (result === "error")
+                alert("Произошла ошибка при добавлении, перепроверьте ваши данные.")
+        }
+    })
+}

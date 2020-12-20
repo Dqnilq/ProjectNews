@@ -18,20 +18,21 @@ namespace Bussines.Models
         public DateTime registration_date  { get; set; }
         
         
-        public Offices(string name, int price, DateTime registrationDate, string photoslink, string phoneNum, string userName)
+        
+        
+        public Offices(int id, string name, int price, DateTime registrationDate , string photoslink, string phoneNum, string userName)
         {
+            Id = id;
             Name = name;
             Price = price;
             registration_date = registrationDate;
             Photoslink = photoslink;
             PhoneNum = phoneNum;
             UserName = userName;
-
         }
         
-        public Offices(int id, string name, int price, DateTime registrationDate , string photoslink, string phoneNum, string userName)
+        public Offices(string name, int price, DateTime registrationDate , string photoslink, string phoneNum, string userName)
         {
-            Id = id;
             Name = name;
             Price = price;
             registration_date = registrationDate;

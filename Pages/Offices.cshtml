@@ -5,6 +5,7 @@
 }
 
 
+
 <!doctype html>
 <html lang="en">
  <head>
@@ -51,36 +52,119 @@
 
 
 
+<div class="btn-group-toggle" data-toggle="buttons">
+  <label class="btn btn-secondary active" style="background: #fee97c!important;">
+     <a class="p-2 text-muted beautifront" asp-area="" asp-page="/AddOffice">Создать объявление</a>
+  </label>
+</div>
+
 
 
 <table>
 
-	<tr>
 
-		<td>
-			<div class="border">
-  <div class="wrap">
-    <div class="product-wrap">
-      <a href=""><img src="https://icdn.lenta.ru/images/2019/09/26/12/20190926120600078/square_320_db9cc60e6dee7f2fd83f9f4adbd289ff.jpg"></a>
-    </div>
-    <div class="loop-action">
-      <a href="">Посмотреть</a>
-    </div>
-  </div>
-    <div class="product-info">
-      <h3 class="product-title">ул.Академика Павлова 23А</h3>
-      <div class="price">&#8381; 21000</div>
-   </div>
-</div>
-       </td>
+  <tr>
+    @foreach (var i in @Model.Officeses)
+    {
+      <td>
+        <div class="border">
+          <div class="wrap">
+            <div class="product-wrap">
+              <a href=""><img src=@i.Photoslink></a>
+            </div>
+            <div class="loop-action">
+              <a href="">Посмотреть</a>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">@i.Name</h3>
+            <div class="price">&#8381; @i.Price</div>
+          </div>
+        </div>
+      </td>
+    }
+   
 
-    <div class="btn-group-toggle" data-toggle="buttons">
-      <label class="btn adder active" style="background: #fee97c!important">
-        <input type="checkbox" checked autocomplete="off" style="background: #fee97c!important"> Создать объявление
-      </label>
-    </div>
+
+
+
+
+
+
+
 
     <td>
+      <div class="border">
+        <div class="wrap">
+          <div class="product-wrap">
+            <a href=""><img src="https://icdn.lenta.ru/images/2019/09/26/12/20190926120600078/square_320_db9cc60e6dee7f2fd83f9f4adbd289ff.jpg"></a>
+          </div>
+          <div class="loop-action">
+            <a href="">Посмотреть</a>
+          </div>
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">ул.Академика Павлова 23А</h3>
+          <div class="price">&#8381; 21000</div>
+        </div>
+      </div>
+    </td>
+
+
+    <td>
+      <div class="border">
+        <div class="wrap">
+          <div class="product-wrap">
+            <a href=""><img src="https://icdn.lenta.ru/images/2019/09/26/12/20190926120600078/square_320_db9cc60e6dee7f2fd83f9f4adbd289ff.jpg"></a>
+          </div>
+          <div class="loop-action">
+            <a href="">Посмотреть</a>
+          </div>
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">ул.Академика Павлова 23А</h3>
+          <div class="price">&#8381; 21000</div>
+        </div>
+      </div>
+    </td>
+
+
+
+  </tr>
+
+<tr>
+
+		<td>
+			<div class="border">
+  <div class="wrap">
+    <div class="product-wrap">
+      <a href=""><img src="https://icdn.lenta.ru/images/2019/09/26/12/20190926120600078/square_320_db9cc60e6dee7f2fd83f9f4adbd289ff.jpg"></a>
+    </div>
+    <div class="loop-action">
+      <a href="">Посмотреть</a>
+    </div>
+  </div>
+    <div class="product-info">
+      <h3 class="product-title">ул.Академика Павлова 23А</h3>
+      <div class="price">&#8381; 21000</div>
+   </div>
+</div>
+       </td>
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  <td>
 			<div class="border">
   <div class="wrap">
     <div class="product-wrap">
@@ -120,83 +204,22 @@
     </tr>
 
 <tr>
-
 		<td>
-			<div class="border">
-  <div class="wrap">
-    <div class="product-wrap">
-      <a href=""><img src="https://icdn.lenta.ru/images/2019/09/26/12/20190926120600078/square_320_db9cc60e6dee7f2fd83f9f4adbd289ff.jpg"></a>
+    <div class="border">
+      <div class="wrap">
+        <div class="product-wrap">
+          <a href=""><img src="https://icdn.lenta.ru/images/2019/09/26/12/20190926120600078/square_320_db9cc60e6dee7f2fd83f9f4adbd289ff.jpg"></a>
+        </div>
+        <div class="loop-action">
+          <a href="">Посмотреть</a>
+        </div>
+      </div>
+      <div class="product-info">
+        <h3 class="product-title">ул.Академика Павлова 23А</h3>
+        <div class="price">&#8381; 21000</div>
+      </div>
     </div>
-    <div class="loop-action">
-      <a href="">Посмотреть</a>
-    </div>
-  </div>
-    <div class="product-info">
-      <h3 class="product-title">ул.Академика Павлова 23А</h3>
-      <div class="price">&#8381; 21000</div>
-   </div>
-</div>
-       </td>
-
-
-
-       <td>
-			<div class="border">
-  <div class="wrap">
-    <div class="product-wrap">
-      <a href=""><img src="https://icdn.lenta.ru/images/2019/09/26/12/20190926120600078/square_320_db9cc60e6dee7f2fd83f9f4adbd289ff.jpg"></a>
-    </div>
-    <div class="loop-action">
-      <a href="">Посмотреть</a>
-    </div>
-  </div>
-    <div class="product-info">
-      <h3 class="product-title">ул.Академика Павлова 23А</h3>
-      <div class="price">&#8381; 21000</div>
-   </div>
-</div>
-       </td>
-
-
-       <td>
-			<div class="border">
-  <div class="wrap">
-    <div class="product-wrap">
-      <a href=""><img src="https://icdn.lenta.ru/images/2019/09/26/12/20190926120600078/square_320_db9cc60e6dee7f2fd83f9f4adbd289ff.jpg"></a>
-    </div>
-    <div class="loop-action">
-      <a href="">Посмотреть</a>
-    </div>
-  </div>
-    <div class="product-info">
-      <h3 class="product-title">ул.Академика Павлова 23А</h3>
-      <div class="price">&#8381; 21000</div>
-   </div>
-</div>
-       </td> 
-
-
-     
-    </tr>
-
-<tr>
-
-		<td>
-			<div class="border">
-  <div class="wrap">
-    <div class="product-wrap">
-      <a href=""><img src="https://icdn.lenta.ru/images/2019/09/26/12/20190926120600078/square_320_db9cc60e6dee7f2fd83f9f4adbd289ff.jpg"></a>
-    </div>
-    <div class="loop-action">
-      <a href="">Посмотреть</a>
-    </div>
-  </div>
-    <div class="product-info">
-      <h3 class="product-title">ул.Академика Павлова 23А</h3>
-      <div class="price">&#8381; 21000</div>
-   </div>
-</div>
-       </td>
+    </td>
 
 
 

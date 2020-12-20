@@ -44,3 +44,4 @@ C:\Users\Danila\Desktop\HomeWorkIT\Bussines\Bussines\bin\Debug\netcoreapp3.1\Npg
 C:\Users\Danila\Desktop\HomeWorkIT\Bussines\Bussines\obj\Debug\netcoreapp3.1\Razor\Pages\BlogContent.cshtml.g.cs
 C:\Users\Danila\Desktop\HomeWorkIT\Bussines\Bussines\obj\Debug\netcoreapp3.1\Razor\Pages\Account.cshtml.g.cs
 C:\Users\Danila\Desktop\HomeWorkIT\Bussines\Bussines\obj\Debug\netcoreapp3.1\Razor\Pages\RegDone.cshtml.g.cs
+C:\Users\Danila\Desktop\HomeWorkIT\Bussines\Bussines\obj\Debug\netcoreapp3.1\Razor\Pages\AddOffice.cshtml.g.cs

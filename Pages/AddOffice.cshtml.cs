@@ -2,22 +2,28 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Bussines.DAO;
-using Bussines.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 
 namespace Bussines.Pages
 {
-    public class OfficesModel : PageModel
+    public class AddOfficeModel : PageModel
     {
-        public List<Officess> Officeses { get; set; }
+        private readonly ILogger<AddOfficeModel> _logger;
         
+        public AddOfficeModel(ILogger<AddOfficeModel> logger)
+        {
+            _logger = logger;
+        }
         public void OnGet()
         {
-            var officedao = new OfficeDao();
-            Officeses = officedao.GetAll();
+            
+        }
+
+        public void OnPost()
+        {
+            
         }
     }
 }

@@ -1,5 +1,5 @@
 ﻿@page
-@model SignUpModel
+@model AddOfficeModel
 
 <!doctype html>
 <html lang="en">
@@ -10,12 +10,12 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/blog/">
     <link rel="stylesheet" href="C:\Users\Danila\Desktop\ProjectB\assets\css\blog.css">
-
-<link href="dist/css/bootstrap.min.css" rel="stylesheet">    
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">    
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
     <link href="css/blog.css" rel="stylesheet">
+    
+    <script type="text/javascript" src="dist/js/func.js"></script>
   </head>
-
  <body>
 
   
@@ -29,18 +29,18 @@
     </nav>  
 </div>
 
+ 
 
-<div class="center-block">
+ <div class="center-block">
     <form class="signin-form simple-border" name="addOffice" onsubmit="return false;">
-        <h2>Создание объявления</h2>
+        <h2>Создание объявления1</h2>
         <label for="inputName" class="sr-only">Название</label>
         <input name="name" type="text" id="inputName" class="form-control" placeholder="Название" required="" autofocus="">
          <label for="inputPrice" class="sr-only">Цена</label>
          <input name="price" type="text" id="inputPrice" class="form-control" placeholder="Цена" required="" autofocus="">
          <label for="inputPhotoLink" class="sr-only">Ссылка на фотографию</label>
         <input name="photolink" type="text" id="inputPhotoLink" class="form-control" placeholder="Ссылка_на_фото" required="" autofocus=""> 
-        
-        <button name="remember" class="form_auth_button" type="submit" onclick="addOffice()">Создать</button>
+        <button name="addoffice" class="add_office" type="submit">Создать</button>
     </form>
 </div>
 
@@ -65,8 +65,5 @@
  
 });
 </script>
-
 </body>
-
-
 </html>

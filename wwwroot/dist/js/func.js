@@ -92,14 +92,16 @@ function addOffice() {
     let price = form.price.value;
     let photolink = form.photolink.value;
 
-
+    console.log("test")
+    
     $.ajax({
         type: 'POST',
         url: '/addoffice1', 
         headers: {
             'name': name,
             'price': price,
-            'photolink' : photolink
+            'photolink' : photolink,
+            'new_blog': 'true'
         },
         success: function(res, status, xhr) {
             let result = xhr.getResponseHeader("result")
@@ -110,3 +112,5 @@ function addOffice() {
         }
     })
 }
+console.log('123')
+$(document).ready(() => $('.add_office').click(addOffice))

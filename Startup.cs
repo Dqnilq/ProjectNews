@@ -57,6 +57,8 @@ namespace Bussines
             
             app.Map("/addoffice1", AddOffice.Add);
 
+            app.Map("/addblog1", AddBlog.Add);
+
             app.UseEndpoints(endpoints => { endpoints.MapRazorPages(); });
         }
     }

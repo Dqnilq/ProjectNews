@@ -1,12 +1,12 @@
 ﻿@page
-@model AddOfficeModel
+@model AddBlogModel
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Создание объявления</title>
+    <title>Создание блога</title>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/blog/">
     <link rel="stylesheet" href="C:\Users\Danila\Desktop\ProjectB\assets\css\blog.css">
@@ -30,15 +30,17 @@
  
 
  <div class="center-block">
-    <form class="signin-form simple-border" name="addOffice" onsubmit="return false;">
-        <h2>Создание объявления</h2>
-        <label for="inputName" class="sr-only">Название</label>
+    <form class="signin-form simple-border" name="addBlog" onsubmit="return false;">
+        <h2>Создание блога</h2>
+        <label for="inputName" class="sr-only">Название статьи</label>
         <input name="name" type="text" id="inputName" class="form-control" placeholder="Название" required="" autofocus="">
-         <label for="inputPrice" class="sr-only">Цена</label>
-         <input name="price" type="text" id="inputPrice" class="form-control" placeholder="Цена" required="" autofocus="">
-         <label for="inputPhotoLink" class="sr-only">Ссылка на фотографию</label>
-        <input name="photolink" type="text" id="inputPhotoLink" class="form-control" placeholder="Ссылка_на_фото" required="" autofocus=""> 
-        <button name="addoffice" class="add_office" type="submit">Создать</button>
+         <label for="inputDesc" class="sr-only">Краткое описание</label>
+         <input name="desc" type="text" id="inputDesc" class="form-control" placeholder="Описание" required="" autofocus="">
+         <label for="inputContent" class="sr-only">Содержание</label>
+        <input name="content" type="text" id="inputContent" class="form-control" placeholder="Содержание" required="" autofocus=""> 
+        <label for="inputPhotoLink" class="sr-only">Ссылка на фотографию</label>
+        <input name="photolinkb" type="text" id="inputPhotoLink" class="form-control" placeholder="Ссылка_на_фото" required="" autofocus=""> 
+       <button name="addblog" class="add_blog" type="submit">Создать</button>
     </form>
 </div>
 

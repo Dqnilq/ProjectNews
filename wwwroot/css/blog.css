@@ -1492,10 +1492,11 @@ section{
   margin: auto;
 }
 #secwrapper{
-background-color: #fee97c 
+background-color: #fcf3a4;
   padding-top: 20px; 
 }
-article{
+
+article {
   width: 280px;
   margin-right: 40px;
   display: inline-block;
@@ -1508,6 +1509,24 @@ article{
   *display:inline;
     zoom:1;
 }
+
+article{
+    width: 280px;
+    margin-right: 40px;
+    display: inline-block;
+    vertical-align: top;
+    border: 1px solid #c8c8c8;
+    margin-bottom: 20px;
+    margin-top: 15px;
+    padding: 7px;
+    border-radius: 3px;
+    background-color: #fee97c;
+    *display:inline;
+    zoom:1;
+}
+
+
+
 .readmore{
   background-color: #fcf3a4;
   padding: 5px 10px;

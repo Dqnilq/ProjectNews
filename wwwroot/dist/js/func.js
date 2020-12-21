@@ -86,13 +86,12 @@ function signup() {
     })
 }
 
-function addOffice() {
+function addoffice() {
     let form = document.addOffice;
     let name = form.name.value;
     let price = form.price.value;
     let photolink = form.photolink.value;
 
-    console.log("test")
     
     $.ajax({
         type: 'POST',
@@ -101,7 +100,7 @@ function addOffice() {
             'name': name,
             'price': price,
             'photolink' : photolink,
-            'new_blog': 'true'
+            'new_office': 'true'
         },
         success: function(res, status, xhr) {
             let result = xhr.getResponseHeader("result")
@@ -112,5 +111,32 @@ function addOffice() {
         }
     })
 }
-console.log('123')
-$(document).ready(() => $('.add_office').click(addOffice))
+$(document).ready(() => $('.add_office').click(addoffice))
+
+
+function addblog() {
+    let form = document.addBlog;
+    let name = form.name.value;
+    let desc = form.desc.value;
+    let content = form.content.value;
+    let photolink = form.photolinkb.value;
+    
+    $.ajax({
+        type: 'POST',
+        url: '/addblog1',
+        headers: {
+            'name_content': name,
+            'description': desc,
+            'content' : content,
+            'photolink' : photolink,
+            'new_blog': 'true'
+        },
+        success: function(res, status, xhr) {
+            let result = xhr.getResponseHeader("result")
+            if (result === "ok")
+                document.location.href = "Blog"
+            else if (result === "error")
+                alert("Произошла ошибка при добавлении, перепроверьте ваши данные.")
+        }
+    })
+}

@@ -11,6 +11,7 @@ namespace Bussines
     {
         public Users Users;
         
+        
         public IActionResult OnGet()
         {
             var usersId = HttpContext.Session.GetInt32("users_id");
@@ -22,5 +23,7 @@ namespace Bussines
             Users = usersDao.GetById((int) usersId);
             return null;
         }
+        
+       
     }
 }

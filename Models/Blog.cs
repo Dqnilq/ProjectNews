@@ -1,26 +1,46 @@
-﻿namespace Bussines.Models
+﻿using System;
+
+namespace Bussines.Models
 {
     public class Blog : IEntity
     {
-        
         public int Id { get; set; }
         
-        public string Heading { get; set; }
+        public int User_id { get; set; }
+        
+        public string Name { get; set; }
         
         public string Description { get; set; }
         
-        public string Context { get; set; }
-        
-        public string PhotosLink { get; set; }
+        public string Content { get; set; }
         
         
-        public Blog(int id, string heading, string description, string context, string photosLink)
+        public string Photoslink { get; set; }
+        
+        public DateTime registration_date  { get; set; }
+        
+        
+        
+        
+        public Blog(int id, string name, string description, int user_id, DateTime registrationDate, string content, string photoslink)
         {
             Id = id;
-            Heading = heading;
+            Name = name;
             Description = description;
-            Context = context;
-            PhotosLink = photosLink;
+            User_id = user_id;
+            registration_date = registrationDate;
+            Content = content;
+            Photoslink = photoslink;
+        }
+        
+        public Blog(string name, string description, int user_id, DateTime registrationDate, string content, string photoslink)
+        {
+            Name = name;
+            Description = description;
+            User_id = user_id;
+            registration_date = registrationDate;
+            Content = content;
+            Photoslink = photoslink;
         }
     }
 }

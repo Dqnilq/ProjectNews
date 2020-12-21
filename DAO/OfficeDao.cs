@@ -31,10 +31,8 @@ namespace Bussines.DAO
             
             if (!reader.HasRows) return allOffices;
 
-            // while ()
-            // {
-            //     
-            // }
+            
+            
             foreach (DbDataRecord record in reader)
             {
                 var office = GetOffice(record);

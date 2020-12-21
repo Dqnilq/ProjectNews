@@ -1,4 +1,5 @@
 ﻿@page
+@using Microsoft.AspNetCore.Http
 @model OfficesModel
 @{
     ViewData["Title"] = "Аренда";
@@ -51,218 +52,49 @@
 </div>
 
 
+@if (HttpContext.Session.GetInt32("users_id") != null)
+{
 
+  <div class="btn-group-toggle">
+    <label class="btn btn-secondary active" style="background: #fee97c!important;">
+      <a class="p-2 text-muted beautifront" asp-area="" asp-page="/AddOffice">Создать объявление</a>
+    </label>
+  </div>
+}
 
-<div class="btn-group-toggle">
-  <label class="btn btn-secondary active" style="background: #fee97c!important;">
-     <a class="p-2 text-muted beautifront" asp-area="" asp-page="/AddOffice">Создать объявление</a>
-  </label>
+<div>
+  
+  
 </div>
 
 
 
-<table>
-
-
-  <tr>
+<div>
+       <section>
     @foreach (var i in @Model.Officeses)
     {
-      <td>
-        <div class="border">
-          <div class="wrap">
-            <div class="product-wrap">
-              <a href=""><img src="@i.Photoslink"></a>
-            </div>
-            <div class="loop-action">
-              <a href="">Посмотреть</a>
-            </div>
-          </div>
-          <div class="product-info">
-            <h3 class="product-title">@i.Name</h3>
-            <div class="price">&#8381; @i.Price</div>
-          </div>
-        </div>
-      </td>
+      <article>
+                             <div class="wrap">
+                               <div class="product-wrap">
+                                 <a><img src="@i.Photoslink"></a>
+                               </div>
+                               <div class="loop-action">
+                                 <a href="">Посмотреть</a>
+                               </div>
+                             </div>
+                             <div class="product-info">
+                               <h3 class="product-title">@i.Name</h3>
+                               <div class="price">&#8381; @i.Price</div>
+                             </div>
+                  </article>
     }
+    
+    </section>
+ </div>
    
-
-
-
-
-
-
-
-
-
-    <td>
-      <div class="border">
-        <div class="wrap">
-          <div class="product-wrap">
-            <a href=""><img src="https://icdn.lenta.ru/images/2019/09/26/12/20190926120600078/square_320_db9cc60e6dee7f2fd83f9f4adbd289ff.jpg"></a>
-          </div>
-          <div class="loop-action">
-            <a href="">Посмотреть</a>
-          </div>
-        </div>
-        <div class="product-info">
-          <h3 class="product-title">ул.Академика Павлова 23А</h3>
-          <div class="price">&#8381; 21000</div>
-        </div>
-      </div>
-    </td>
-
-
-    <td>
-      <div class="border">
-        <div class="wrap">
-          <div class="product-wrap">
-            <a href=""><img src="https://icdn.lenta.ru/images/2019/09/26/12/20190926120600078/square_320_db9cc60e6dee7f2fd83f9f4adbd289ff.jpg"></a>
-          </div>
-          <div class="loop-action">
-            <a href="">Посмотреть</a>
-          </div>
-        </div>
-        <div class="product-info">
-          <h3 class="product-title">ул.Академика Павлова 23А</h3>
-          <div class="price">&#8381; 21000</div>
-        </div>
-      </div>
-    </td>
-
-
-
-  </tr>
-
-<tr>
-
-		<td>
-			<div class="border">
-  <div class="wrap">
-    <div class="product-wrap">
-      <a href=""><img src="https://icdn.lenta.ru/images/2019/09/26/12/20190926120600078/square_320_db9cc60e6dee7f2fd83f9f4adbd289ff.jpg"></a>
-    </div>
-    <div class="loop-action">
-      <a href="">Посмотреть</a>
-    </div>
-  </div>
-    <div class="product-info">
-      <h3 class="product-title">ул.Академика Павлова 23А</h3>
-      <div class="price">&#8381; 21000</div>
-   </div>
-</div>
-       </td>
-
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+   
   
 
-  <td>
-			<div class="border">
-  <div class="wrap">
-    <div class="product-wrap">
-      <a href=""><img src="https://icdn.lenta.ru/images/2019/09/26/12/20190926120600078/square_320_db9cc60e6dee7f2fd83f9f4adbd289ff.jpg"></a>
-    </div>
-    <div class="loop-action">
-      <a href="">Посмотреть</a>
-    </div>
-  </div>
-    <div class="product-info">
-      <h3 class="product-title">ул.Академика Павлова 23А</h3>
-      <div class="price">&#8381; 21000</div>
-   </div>
-</div>
-       </td>
-
-
-       <td>
-			<div class="border">
-  <div class="wrap">
-    <div class="product-wrap">
-      <a href=""><img src="https://icdn.lenta.ru/images/2019/09/26/12/20190926120600078/square_320_db9cc60e6dee7f2fd83f9f4adbd289ff.jpg"></a>
-    </div>
-    <div class="loop-action">
-      <a href="">Посмотреть</a>
-    </div>
-  </div>
-    <div class="product-info">
-      <h3 class="product-title">ул.Академика Павлова 23А</h3>
-      <div class="price">&#8381; 21000</div>
-   </div>
-</div>
-       </td> 
-
-
-     
-    </tr>
-
-<tr>
-		<td>
-    <div class="border">
-      <div class="wrap">
-        <div class="product-wrap">
-          <a href=""><img src="https://icdn.lenta.ru/images/2019/09/26/12/20190926120600078/square_320_db9cc60e6dee7f2fd83f9f4adbd289ff.jpg"></a>
-        </div>
-        <div class="loop-action">
-          <a href="">Посмотреть</a>
-        </div>
-      </div>
-      <div class="product-info">
-        <h3 class="product-title">ул.Академика Павлова 23А</h3>
-        <div class="price">&#8381; 21000</div>
-      </div>
-    </div>
-    </td>
-
-
-
-       <td>
-			<div class="border">
-  <div class="wrap">
-    <div class="product-wrap">
-      <a href=""><img src="https://icdn.lenta.ru/images/2019/09/26/12/20190926120600078/square_320_db9cc60e6dee7f2fd83f9f4adbd289ff.jpg"></a>
-    </div>
-    <div class="loop-action">
-      <a href="">Посмотреть</a>
-    </div>
-  </div>
-    <div class="product-info">
-      <h3 class="product-title">ул.Академика Павлова 23А</h3>
-      <div class="price">&#8381; 21000</div>
-   </div>
-</div>
-       </td>
-
-
-       <td>
-			<div class="border">
-  <div class="wrap">
-    <div class="product-wrap">
-      <a href=""><img src="https://icdn.lenta.ru/images/2019/09/26/12/20190926120600078/square_320_db9cc60e6dee7f2fd83f9f4adbd289ff.jpg"></a>
-    </div>
-    <div class="loop-action">
-      <a href="">Посмотреть</a>
-    </div>
-  </div>
-    <div class="product-info">
-      <h3 class="product-title">ул.Академика Павлова 23А</h3>
-      <div class="price">&#8381; 21000</div>
-   </div>
-</div>
-       </td> 
-
-
-     
-    </tr>
-</table>
 
 
 

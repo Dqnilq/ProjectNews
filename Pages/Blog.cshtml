@@ -1,8 +1,10 @@
 ﻿@page
+@using Microsoft.AspNetCore.Http
 @model BlogModel
 
 @{
     ViewData["Title"] = "Блог";
+  
 }
 
 <!doctype html>
@@ -44,54 +46,33 @@
     </nav>  
 </div>
 
+@if (HttpContext.Session.GetInt32("users_id") != null)
+{
+
+  <div class="btn-group-toggle">
+    <label class="btn btn-secondary active" style="background: #fee97c!important;">
+      <a class="p-2 text-muted beautifront" asp-area="" asp-page="/AddBlog">Создать блог</a>
+    </label>
+  </div>
+}
 
 
-<div id="secwrapper">
-      <section>
-        <article>
-          <a href="#"><img src="image\xboxlast.jpg" width="265px" height="200px" alt="Фото не загрузилось!"/></a>
-          <h1>Статья 1</h1>
-          <p>Текст статьи 1</p>
-          <a  class="readmore" asp-area="" asp-page="/BlogContent">Читать далее..</a>
-        </article>
-        <article>
-          <a href="#"><img src="image\xboxlast.jpg" width="265px" height="200px" ></a>
-         <h1>Статья 1</h1>
-          <p>Текст статьи 1</p>
-          <a class="readmore" asp-area="" asp-page="/BlogContent">Читать далее..</a>
-        </article>
-        <article class="rightcl">
-          <a href="#"><img src="image\xboxlast.jpg" width="265px" height="200px" alt="Фото не загрузилось!"/></a>
-         <h1>Статья 1</h1>
-          <p>Текст статьи 1</p>
-          <a  class="readmore" asp-area="" asp-page="/BlogContent">Читать далее..</a>
-        </article>      
-        <article>
-          <a href="#"><img src="image\xboxlast.jpg"  width="265px" height="200px"alt="Фото не загрузилось!"/></a>
-        <h1>Статья 1</h1>
-          <p>Текст статьи 1</p>
-          <a class="readmore" asp-area="" asp-page="/BlogContent">Читать далее..</a>
-        </article>
-       <article>
-          <a href="#"><img src="image\xboxlast.jpg"  width="265px" height="200px"alt="Фото не загрузилось!"/></a>
-        <h1>Статья 1</h1>
-          <p>Текст статьи 1</p>
-          <a  class="readmore" asp-area="" asp-page="/BlogContent" >Читать далее..</a>
-        </article>
-        <article>
-          <a href="#"><img src="image\xboxlast.jpg"  width="265px" height="200px"alt="Фото не загрузилось!"/></a>
-        <h1>Статья 1</h1>
-          <p>Текст статьи 1</p>
-          <a class="readmore" asp-area="" asp-page="/BlogContent">Читать далее..</a>
-        </article>
-        <article>
-          <a href="#"><img src="image\xboxlast.jpg"  width="265px" height="200px"alt="Фото не загрузилось!"/></a>
-        <h1>Статья 1</h1>
-          <p>Текст статьи 1</p>
-          <a class="readmore" asp-area="" asp-page="/BlogContent">Читать далее..</a>
-        </article>
-      </section>
-    </div>
+<div>
+       <section>
+    @foreach (var i in @Model.Blogs)
+    {
+      <article id="@i.Id">
+        <a href="#"><img src="@i.Photoslink" width="265px" height="200px" alt="Фото не загрузилось!"/></a>
+        <h1>@i.Name</h1>
+        <p>@i.Description</p>
+        <a class="readmore" href="BlogContent/@i.Id">Читать далее..</a>
+      </article>
+    }
+    </section>
+ </div>
+
+
+
 
 
 <script type="text/javascript">

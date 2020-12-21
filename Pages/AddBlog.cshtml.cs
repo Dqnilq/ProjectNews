@@ -2,23 +2,23 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Bussines.DAO;
-using Bussines.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 
 namespace Bussines.Pages
 {
-    public class BlogContentModel : PageModel
+    public class AddBlogModel : PageModel
     {
-        public Blog Blog;
+        private readonly ILogger<AddBlogModel> _logger;
         
-        public void OnGet(string Id)
+        public AddBlogModel(ILogger<AddBlogModel> logger)
         {
-            var id = int.Parse(Id);
-            Blog = new BlogDao().GetById(id);
+            _logger = logger;
+        }
+        public void OnGet()
+        {
+            
         }
     }
 }

@@ -2,6 +2,7 @@
 @{
     var isAuthorized = Context.Session.GetInt32("users_id") != null;
 }
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +17,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
             crossorigin="anonymous"></script>
-    <script type="text/javascript" src="dist/js/func.js"></script>
+    <script type="text/javascript" src="js/func.js"></script>
 </head>
 <body>
 <div class="container">

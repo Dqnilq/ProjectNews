@@ -8,7 +8,7 @@
   <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <title>О Нас</title>
+      <title>@Model.Blog.Name</title>
       <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
       <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/blog/">
   
@@ -44,14 +44,15 @@
 
 
 <main role="main" class="container">
-  <div class="row">
-    
-      
-      <a><img src="@Model.Blog.Photoslink"></a>
-      <h3>@Model.Blog.Content</h3>
-   
-     
-  </div>
+    <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark mobaboba">
+    <div class="col-md-6 px-0" style="float: left">
+        <h1 class = "centrfront beautifront">@Model.Blog.Name</h1>
+        <p class="blog-post-meta">@Model.Blog.registration_date.ToString("d") <a>@Model.Users.Name</a></p>
+        <br>
+        <h4 beautifront style="color: #6c757d">@Model.Blog.Content</h4>
+    </div>
+    <img class="mainimage bobamoba" src="@Model.Blog.Photoslink" width="450" height="300">
+</div>
 </main>
 
 
@@ -60,7 +61,7 @@
 </div>
 <div class="container">
     <div class="comments">
-        <h3 class="title-comments">Комментарии: </h3>
+        <h3 class="title-comments">Комментари1: </h3>
         <ul class="media-list">
             <!-- Комментарий (уровень 1) -->
             <li class="media">
@@ -70,9 +71,9 @@
                 </div>
                 <div class="media-body">
                     <div class="media-heading">
-                        <div class="author">Дима</div>
+                        <div class="author">@Model.Users.Name</div>
                         <div class="metadata">
-                            <span class="date">16 ноября 2015, 13:43</span>
+                            <span class="date">@Model.Blog.registration_date.ToString("d")</span>
                         </div>
                     </div>
                     <div class="media-text text-justify">Lorem ipsum dolor sit amet. Blanditiis praesentium voluptatum

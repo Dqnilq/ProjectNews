@@ -15,9 +15,12 @@ namespace Bussines.Pages
     {
         public Blog Blog;
         
+        public Users Users;
+        
         public void OnGet(string Id)
         {
             var id = int.Parse(Id);
+            Users = new UsersDao().GetById(id);
             Blog = new BlogDao().GetById(id);
         }
     }

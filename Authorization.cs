@@ -1,4 +1,5 @@
-﻿using System.Text.RegularExpressions;
+﻿using System;
+using System.Text.RegularExpressions;
 using Bussines.DAO;
 using Bussines.Models;
 using Microsoft.AspNetCore.Builder;
@@ -46,6 +47,23 @@ namespace Bussines
             var name = context.Request.Headers["name"];
             var password = context.Request.Headers["password"];
             var user = new UsersDao().TrySignin(name, password);
+            var type_session = context.Request.Cookies[".AspNetCore.Session"];
+            var rememberme = context.Request.Headers["remember"].ToString();
+            
+            
+            context.Session.SetString("123", "123");
+
+            context.Response.Cookies.Delete(".AspNetCore.Session");
+            
+            if (rememberme == "false")
+            {
+                context.Response.Cookies.Append(".AspNetCore.Session", type_session);
+            }
+            else
+            {
+                context.Response.Cookies.Append(".AspNetCore.Session", type_session, new CookieOptions(){Expires = DateTimeOffset.MaxValue});
+            }
+            
             MakeResponse(context, user);
         }
 
@@ -83,6 +101,7 @@ namespace Bussines
                 context.Response.Headers.Add("result", "ok");
                 context.Session.SetInt32("users_id", user.Id);
                 context.Session.SetString("users_name", user.Name);
+                
             }
             
             else

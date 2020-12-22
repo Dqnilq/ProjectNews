@@ -14,7 +14,6 @@ namespace Bussines.Models
         
         public string Content { get; set; }
         
-        
         public string Photoslink { get; set; }
         
         public DateTime registration_date  { get; set; }

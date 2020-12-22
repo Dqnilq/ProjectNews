@@ -1,8 +1,11 @@
-﻿// Вход
+﻿
+
+// Вход
 function signin() {
     let form = document.signIn;
     let name = form.name.value;
     let password = form.password.value;
+    
     let remember = form.remember.checked;
 
     if (name.length < 1 || password.length < 1){

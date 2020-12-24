@@ -12,6 +12,8 @@ function signin() {
         alert("Заполните все поля");
         return;
     }
+    
+    
 
     // TODO запомнить меня
 
@@ -80,7 +82,7 @@ function signup() {
         success: function(res, status, xhr) {
             let result = xhr.getResponseHeader("result")
             if (result === "ok")
-                document.location.href = "Account"
+                document.location.href = "RegDone"
             else if (result === "error")
                 alert("Произошла ошибка при регистрации. Провертье введенные данные")
             else
@@ -145,3 +147,27 @@ function addblog() {
     })
 }
 $(document).ready(() => $('.add_blog').click(addblog))
+
+
+
+function addcomment() {
+    let form = document.addComment;
+    let comment = form.comment.value;
+
+    $.ajax({
+        type: 'POST',
+        url: '/addcomment1',
+        headers: {
+            'comment_text': comment,
+            'new_comment': 'true'
+        },
+        success: function(res, status, xhr) {
+            let result = xhr.getResponseHeader("result")
+            if (result === "ok")
+                document.location.href = "About"
+            else if (result === "error")
+                alert("Произошла ошибка при добавлении, перепроверьте ваши данные.")
+        }
+    })
+}
+$(document).ready(() => $('.add_comment').click(addcomment))

@@ -24,6 +24,18 @@ namespace Bussines
             return null;
         }
         
+        public IActionResult OnPost()
+        {
+            var usersId = HttpContext.Session.GetInt32("users_id");
+            if (usersId == null)
+            {
+                return Redirect("SignIn");
+            }
+            var usersDao = new UsersDao();
+            Users = usersDao.GetById((int) usersId);
+            return null;
+        }
+        
        
     }
 }

@@ -2,6 +2,7 @@
 @model AccountModel
 
 
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -10,11 +11,8 @@
     <title>Личный кабинет</title>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/blog/">
-  
     <link href="dist/css/bootstrap.min.css" rel="stylesheet"> 
-  
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
-  
     <link href="css/blog.css" rel="stylesheet">
     <link href="css/another.css" rel="stylesheet">
 </head>
@@ -26,6 +24,7 @@
     </main>
 </div>
   
+
 
 <div class="nav-scroller py-1 mb-2">
     <nav class="nav d-flex justify-content-endntent-between">
@@ -50,17 +49,41 @@
 @*        </div> *@
 @* </div> *@
 
+
+<form method="post" enctype="multipart/form-data">
+    <input type="file" asp-for="Upload" />
+    <input type="submit" />
+</form>
+
+
 <div class="container">
     <div class="account-header">
         <h1 class="account-username">@Model.Users.Name</h1>
         <a href="#" onclick="exit()">Выйти</a>
     </div>
     <div class="account-courses">
-        <h2>Мой номер: @Model.Users.PhoneNum:</h2>
-        <h2>Мое имя: @Model.Users.UserName:</h2>
-        <h2>Дата регистрации: @Model.Users.registration_date:</h2>
+        <h2>Мой номер: @Model.Users.PhoneNum</h2>
+        <h2>Мое имя: @Model.Users.UserName</h2>
+        <h2>Дата регистрации: @Model.Users.registration_date</h2>
     </div>
 </div>
+
+
+
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+
+
 
 <script type="text/javascript">
   $(document).ready(function(){

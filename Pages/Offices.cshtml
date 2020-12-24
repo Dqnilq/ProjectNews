@@ -8,7 +8,7 @@
 
 
 <!doctype html>
-<html lang="en">
+<html lang="ru">
  <head>
     <meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -70,26 +70,55 @@
 
 
 <div>
-       <section>
+  <section>
+    @{
+      int count = 0;
+    }
     @foreach (var i in @Model.Officeses)
     {
+
+      Random rand = new Random();
+      int value = rand.Next(0, 10);
+      int value2 = rand.Next(0, 10);
+      int value3 = rand.Next(0, 10);
+      int value4 = rand.Next(0, 10);
+      int value5 = rand.Next(0, 10);
+      count++;
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
       <article>
-                             <div class="wrap">
-                               <div class="product-wrap">
-                                 <a><img src="@i.Photoslink"></a>
-                               </div>
-                               <div class="loop-action">
-                                 <a href="">Посмотреть</a>
-                               </div>
-                             </div>
-                             <div class="product-info">
-                               <h3 class="product-title">@i.Name</h3>
-                               <div class="price">&#8381; @i.Price</div>
-                             </div>
-                  </article>
+        <div class="wrap">
+          <div class="product-wrap">
+            <a><img src="@i.Photoslink"></a>
+          </div>
+          <div class="loop-action">
+            <a href="">Посмотреть</a>
+          </div>
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">@i.Name</h3>
+          <h3 class="product-title">Номер: 500-@value@value5@value4-@value3@value2</h3>
+          <div class="price">&#8381; @i.Price</div>
+        </div>
+      </article>
     }
-    
-    </section>
+
+  </section>
  </div>
    
    

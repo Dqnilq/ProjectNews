@@ -13,10 +13,11 @@ namespace Bussines.Pages
     public class OfficesModel : PageModel
     {
         public List<Officess> Officeses { get; set; }
-        
+
         public void OnGet()
         {
             var officedao = new OfficeDao();
+            
             Officeses = officedao.GetAll();
         }
     }

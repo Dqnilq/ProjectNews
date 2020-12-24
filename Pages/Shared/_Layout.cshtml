@@ -1,10 +1,13 @@
 ﻿@using Microsoft.AspNetCore.Http
+@using System.Web.Helpers;
+
 @{
     var isAuthorized = Context.Session.GetInt32("users_id") != null;
 }
 
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -27,15 +30,16 @@
         <a class="blog-header-logo text-dark" asp-area="" asp-page="/Index">Watch Me!</a>
       </div>
       <div>
-        @if (isAuthorized)
-        {
-          <a class="btn btn-sm btn-outline-secondary" asp-area="" asp-page="/Account"><strong class="beautifront">Личный кабинет</strong></a>
-        }
-        else
-        {
-          <a class="btn btn-sm btn-outline-secondary" asp-area="" asp-page="/Signup"><strong class="beautifront">Регистрация</strong></a>
-          <a class="btn btn-sm btn-outline-secondary" asp-area="" asp-page="/Signin"><strong class="beautifront">Войти</strong></a>
-        }
+          @if (isAuthorized)
+                 {
+                   <a class="btn btn-sm btn-outline-secondary" asp-area="" asp-page="/Account"><strong class="beautifront">Личный кабинет</strong></a>
+                   <a class="btn btn-sm btn-outline-secondary" asp-area="" asp-page="/Signin"><strong class="beautifront">Войти</strong></a>
+                 }
+                 else
+                 {
+                   <a class="btn btn-sm btn-outline-secondary" asp-area="" asp-page="/Signup"><strong class="beautifront">Регистрация</strong></a>
+                   <a class="btn btn-sm btn-outline-secondary" asp-area="" asp-page="/Signin"><strong class="beautifront">Войти</strong></a>
+                 }
       </div>
     </div>
   

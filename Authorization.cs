@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Security.Cryptography;
+using System.Text;
 using System.Text.RegularExpressions;
 using Bussines.DAO;
 using Bussines.Models;
@@ -46,23 +48,23 @@ namespace Bussines
         {
             var name = context.Request.Headers["name"];
             var password = context.Request.Headers["password"];
-            var user = new UsersDao().TrySignin(name, password);
+            var user = new UsersDao().TrySignin(name, hashPassword(password));
             var type_session = context.Request.Cookies[".AspNetCore.Session"];
             var rememberme = context.Request.Headers["remember"].ToString();
             
             
-            context.Session.SetString("123", "123");
+           context.Session.SetString("123", "123");
 
-            context.Response.Cookies.Delete(".AspNetCore.Session");
+           context.Response.Cookies.Delete(".AspNetCore.Session");
             
-            if (rememberme == "false")
-            {
-                context.Response.Cookies.Append(".AspNetCore.Session", type_session);
-            }
-            else
-            {
-                context.Response.Cookies.Append(".AspNetCore.Session", type_session, new CookieOptions(){Expires = DateTimeOffset.MaxValue});
-            }
+           if (rememberme == "false")
+           {
+               context.Response.Cookies.Append(".AspNetCore.Session", type_session);
+           }
+           else
+           {
+               context.Response.Cookies.Append(".AspNetCore.Session", type_session, new CookieOptions(){Expires = DateTimeOffset.MaxValue});
+           }
             
             MakeResponse(context, user);
         }
@@ -79,7 +81,7 @@ namespace Bussines
                 MakeErrorResponse(context);
                 return;
             }
-            var user = new UsersDao().TrySignup(name, password, userName, phoneNum);
+            var user = new UsersDao().TrySignup(name, hashPassword(password), userName, phoneNum);
             MakeResponse(context, user);
         }
     
@@ -113,6 +115,25 @@ namespace Bussines
         private static void MakeErrorResponse(HttpContext context)
         {
             context.Response.Headers.Add("result", "error");
+        }
+        
+        private static bool ComparePassword(string pwd, string hashed) => hashPassword(pwd).Equals(hashed);
+
+        private static string hashPassword(string pwd)
+        {
+            var md5 = new MD5CryptoServiceProvider();
+            md5.ComputeHash(ASCIIEncoding.ASCII.GetBytes(pwd));  
+  
+            var result = md5.Hash;  
+
+            var strBuilder = new StringBuilder();  
+            
+            foreach (var t in result)
+            {
+                strBuilder.Append(t.ToString("x2"));
+            }
+
+            return strBuilder.ToString();  
         }
     }
 }

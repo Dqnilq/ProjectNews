@@ -1,4 +1,5 @@
 ﻿@page
+@using Microsoft.AspNetCore.Http
 @model AboutModel
 
 
@@ -35,6 +36,72 @@
         <a class="p-2 text-muted beautifront" asp-area="" asp-page="/About">О Нас</a>
     </nav>  
 </div>
+
+
+@if (HttpContext.Session.GetInt32("users_id") != null)
+{
+
+    <div class="center-block">
+        <form class="form_auth_style" name="addComment" onsubmit="return false;">
+            <h4>Добавить отзыв</h4>
+            <label for="inputCom" class="sr-only">Название</label>
+            <input name="comment" type="text" id="inputCom" class="form-control" placeholder="..." required="" autofocus="">
+            <button name="addcomment" class="add_comment" style="background-color: #fee97c;" type="submit">Отправить</button>
+        </form>
+    </div>
+}
+else{
+   <h4>Вам необходимо авторизоваться, чтобы оставить отзыв!</h4>
+}
+
+                <br>
+                <br>
+                <br>
+
+<div class="container">
+        </div>
+        <div class="container">
+            <div class="comments">
+                <h3 class="title-comments">Отзывы: </h3>
+                <br>
+                <br>
+                <br>
+            @{
+                int count = 1;
+            }
+@{
+    foreach (var i in Model.Commentt)
+    {
+       
+        
+        <ul class="media-list">
+            <li class="media">
+            <div class="media-left">
+                <a href="#">
+                </a>
+            </div>
+        
+            
+            <div class="media-body">
+                <div class="media-heading">
+                    <div class="metadata">
+                    </div>
+                </div>
+                <div class="media-text text-justify">
+                    <h4>Отзыв № @count</h4>   
+                    <h5 style="color: black">@i.Comment_text</h5>
+                </div>
+            </div>
+        </ul>
+        count++;
+        <br>
+
+    }
+}
+                    
+            </div>
+
+        </div>
 
 
 

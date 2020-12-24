@@ -5,26 +5,30 @@ namespace Bussines.Models
     public class Comment : IEntity 
     {
         public int Id { get; set; }
-        public int CourseId { get; set; }
-        public int UsersId { get; set; }
         
-        public string UsersName { get; set; }
-        public string CommentText { get; set; }
-        public DateTime CreationDate { get; set; }
-
-        public Comment(int usersId, string commentText, DateTime creationDate)
+        public int User_id { get; set; }
+        
+        public string Comment_text { get; set; }
+        
+        
+        public DateTime creation_date  { get; set; }
+        
+        
+        
+        
+        public Comment(int id, int userId, string commentText, DateTime creationDate)
         {
-            UsersId = usersId;
-            CommentText = commentText;
-            CreationDate = creationDate;
+            Id = id;
+            User_id = userId;
+            Comment_text = commentText;
+            creation_date = creationDate;
         }
-
-        public Comment(int courseId, int usersId, string commentText, DateTime creationDate)
+        
+        public Comment(int userId, string commentText, DateTime registrationDate)
         {
-            CourseId = courseId;
-            UsersId = usersId;
-            CommentText = commentText;
-            CreationDate = creationDate;
+            User_id = userId;
+            Comment_text = commentText;
+            creation_date = registrationDate;
         }
     }
 }

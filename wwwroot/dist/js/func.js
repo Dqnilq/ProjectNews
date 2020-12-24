@@ -140,3 +140,26 @@ function addblog() {
         }
     })
 }
+
+
+function addcomment() {
+    let form = document.addComment;
+    let comment = form.comment.value;
+
+    $.ajax({
+        type: 'POST',
+        url: '/addcomment1',
+        headers: {
+            'comment_text': comment,
+            'new_comment': 'true'
+        },
+        success: function(res, status, xhr) {
+            let result = xhr.getResponseHeader("result")
+            if (result === "ok")
+                document.location.href = "About"
+            else if (result === "error")
+                alert("Произошла ошибка при добавлении, перепроверьте ваши данные.")
+        }
+    })
+}
+$(document).ready(() => $('.add_comment').click(addcomment))

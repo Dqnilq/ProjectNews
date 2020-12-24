@@ -19,7 +19,7 @@ namespace Bussines.Models
         
         
         
-        public Officess(int id, string name, string price, int user_id, DateTime registrationDate , string photoslink)
+        public Officess(int id, string name, string price, int user_id, DateTime registrationDate, string photoslink)
         {
             Id = id;
             Name = name;
